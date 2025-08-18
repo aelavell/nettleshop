@@ -1,13 +1,13 @@
 import { ShoppingCart, UserIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-
 import { Button } from '@/components/ui/button';
 import { APP_NAME } from '@/lib/constants';
+import ModeToggle from './mode-toggle';
 
 const Header = () => {
   return (
-    <header className='w-full border-b bg-white'>
+    <header className='w-full border-b bg-background border-border'>
       <div className='w-full max-w-7xl mx-auto px-5 md:px-10 py-4'>
         <div className='flex w-full justify-between items-center'>
           <div className='flex items-center'>
@@ -19,12 +19,13 @@ const Header = () => {
                 height={48}
                 alt={`${APP_NAME} logo`}
               />
-              <span className='hidden lg:block font-bold text-2xl ml-3'>
+              <span className='hidden lg:block font-bold text-2xl ml-3 text-foreground'>
                 {APP_NAME}
               </span>
             </Link>
           </div>
           <div className='flex items-center space-x-2'>
+            <ModeToggle />
             <Button asChild variant='ghost'>
               <Link href='/cart'>
                 <ShoppingCart />
