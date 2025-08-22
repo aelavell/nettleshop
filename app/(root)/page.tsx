@@ -1,6 +1,9 @@
+import sampleData from '@/db/sample-data'
+import ProductList from '@/components/shared/product/product-list';
 
 const Homepage = () => {
-  return <div className="text-4xl font-bold">Nettle Shop</div>;
+  return <ProductList data={sampleData.products} title="Newest Arrivals" limit={4} />
+
 }
 
 export default Homepage;
